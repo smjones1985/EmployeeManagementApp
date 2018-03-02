@@ -31,13 +31,40 @@ namespace Chapter4Exercise1
                 Console.WriteLine("Please select an option from the menu");
                 Console.WriteLine("1. Add new Employee");
                 Console.WriteLine("2. Remove Employee");
-                Console.WriteLine("3. View all Employee");
+                Console.WriteLine("3. View all Employee");//view all should have a sort option
                 Console.WriteLine("4. Modify Employee");
+                //show the average employee salary
+                //add exit option and make that a condition for our while loop so the application can end
                 string input = Console.ReadLine();
 
                 if (input == "1")
                 {
                     CreateEmployee();
+                    continue;//this indicates that we want to skip doing anything else but we are not breaking our loop. It will start over again.
+                }
+                else if (input == "2")
+                {
+                    RemoveEmployee();//find out employee they don't want any more and remove them from the container.
+                    continue;
+                }
+                else if (input == "3")
+                {
+                    DisplayAllEmployees(); //option to sort in ascending and descending order by name. //option to display basedon highest salary 
+                    continue;
+                }
+                else if (input == "4")
+                {
+                    ModifyEmployee(); //can enter id, birthdate or name. display when result is more than one to narrow down choice 
+                    continue;
+
+                }
+                else if (input == "5")
+                {
+                    DisplayAverageSalary(); //calculate and display average. use .ToString("C");
+                }
+                else if(input == "6")
+                {
+                    //exit loop
                 }
             }
 
@@ -45,12 +72,21 @@ namespace Chapter4Exercise1
 
         private static void CreateEmployee()
         {
-            //string test= "";
             Employee CurrentEmployee = new Employee();
             Console.WriteLine("Employee Name: ");
             CurrentEmployee.EmployeeName = Console.ReadLine();
 
+            //ask for and assign employee birthday to our object
 
+            //ask for and assign monthly salary to our object
+
+            //here is how you can randomly generate an id number:
+
+            Random randomGenerator = new Random();
+            CurrentEmployee.EmployeeNumber = randomGenerator.Next();
+
+
+            //at the end we need to call to our data access layer class and add this employee to our container
 
         }
     }
