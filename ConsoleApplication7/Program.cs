@@ -11,13 +11,12 @@ namespace Chapter4Exercise1
     {
         static void Main(string[] args)
         {
-
+            List<string> employeeRecord = new List<string>();
             // Create an Employee class. Items to include as data members are employee number
             // name, date of hire, and monthly salary. 
 
             //Include appropiate constructors and properties
             //Employee employee = new Employee(42, "Bob", 5000m, string.AddYears(-4));//I've added an example of the call. Visual studio will aid you in generated a matching constructor or you can add it yourself.
-
 
             //Just make sure that you accep those parameters and that assign those values to the properties in your class.
 
@@ -36,39 +35,15 @@ namespace Chapter4Exercise1
                 //show the average employee salary
                 //add exit option and make that a condition for our while loop so the application can end
                 string input = Console.ReadLine();
-
-                if (input == "1")
+                if(input == "1")
                 {
-                    CreateEmployee();
-                    continue;//this indicates that we want to skip doing anything else but we are not breaking our loop. It will start over again.
-                }
-                else if (input == "2")
-                {
-                    RemoveEmployee();//find out employee they don't want any more and remove them from the container.
-                    continue;
-                }
-                else if (input == "3")
-                {
-                    DisplayAllEmployees(); //option to sort in ascending and descending order by name. //option to display basedon highest salary 
-                    continue;
-                }
-                else if (input == "4")
-                {
-                    ModifyEmployee(); //can enter id, birthdate or name. display when result is more than one to narrow down choice 
-                    continue;
-
-                }
-                else if (input == "5")
-                {
-                    DisplayAverageSalary(); //calculate and display average. use .ToString("C");
-                }
-                else if(input == "6")
-                {
-                    //exit loop
+                    
                 }
             }
 
         }
+
+       
 
         private static void CreateEmployee()
         {
